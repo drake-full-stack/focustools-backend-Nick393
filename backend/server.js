@@ -4,8 +4,10 @@ const mongoose = require("mongoose");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const cors = require("cors");  // ← ADD THIS LINE
 
 // Middleware
+app.use(cors());  // ← ADD THIS LINE (must be BEFORE routes)
 app.use(express.json());
 
 // MongoDB Connection
